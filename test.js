@@ -15,6 +15,7 @@ test.set("jacket", "blue");
 test.set("kite", "pink");
 test.set("lion", "golden");
 
+console.log(test.entries());
 console.log(test.keys());
 console.log(test.values());
 console.log("Before clear:");
