@@ -72,7 +72,13 @@ export class HashMap {
     return false;
   }
 
-  lenght() {
+  length() {
     return this.size;
+  }
+
+  clear() {
+    this.size = 0;
+    this.capacity = this.initialCapacity;
+    this.buckets = new Array(initialCapacity).fill(null).map(() => []);
   }
 }
