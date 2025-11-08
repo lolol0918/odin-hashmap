@@ -1,7 +1,8 @@
-class HashMap {
+export class HashMap {
   constructor(loadFactor = 0.75, initialCapacity = 16) {
     this.loadFactor = loadFactor;
     this.capacity = initialCapacity;
+    this.size = initialCapacity;
     this.buckets = new Array(initialCapacity).fill(null).map(() => []);
   }
 
@@ -27,10 +28,19 @@ class HashMap {
     }
 
     bucket.push([key, value]);
+    this.size++;
   }
 
   get(key) {
     const index = this.hash(key);
-    return this.buckets[index];
+    const bucket = this.buckets[index];
+
+    for (let i = 0; i < bucket.length; i++) {
+      if (bucket[i][0] === key) {
+        return bucket[i][1];
+      }
+    }
+
+    return null;
   }
 }
