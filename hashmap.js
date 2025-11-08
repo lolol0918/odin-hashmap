@@ -71,4 +71,8 @@ export class HashMap {
 
     return false;
   }
+
+  lenght() {
+    return this.size;
+  }
 }

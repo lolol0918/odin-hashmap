@@ -29,3 +29,8 @@ console.log("Has 'apple'? ", test.has("apple")); // false
 console.log("Has 'lion'? ", test.has("lion")); // false
 console.log("Has 'banana'? ", test.has("banana")); // true
 console.log("Get 'banana': ", test.get("banana")); // "yellow"
+
+console.log(test.lenght());
+
+test.remove("frog");
+console.log(test.lenght());
