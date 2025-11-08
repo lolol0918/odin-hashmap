@@ -15,7 +15,8 @@ test.set("jacket", "blue");
 test.set("kite", "pink");
 test.set("lion", "golden");
 
-console.log(test.key());
+console.log(test.keys());
+console.log(test.values());
 console.log("Before clear:");
 console.log("Length:", test.length()); // 12
 console.log("Has 'apple'? ", test.has("apple")); // true
@@ -36,5 +37,3 @@ test.set("monkey", "brown");
 console.log("\nAfter adding new key:");
 console.log("Length:", test.length()); // 1
 console.log("Get 'monkey':", test.get("monkey")); // "brown"
-
-console.log(test.key());

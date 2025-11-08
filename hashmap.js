@@ -81,7 +81,7 @@ export class HashMap {
     this.buckets = new Array(this.capacity).fill(null).map(() => []);
   }
 
-  key() {
+  keys() {
     const allKeys = [];
 
     for (const bucket of this.buckets) {
@@ -91,5 +91,17 @@ export class HashMap {
     }
 
     return allKeys;
+  }
+
+  values() {
+    const allValues = [];
+
+    for (const bucket of this.buckets) {
+      for (const pair of bucket) {
+        allValues.push(pair[1]); // first element is the key
+      }
+    }
+
+    return allValues;
   }
 }
