@@ -78,7 +78,18 @@ export class HashMap {
 
   clear() {
     this.size = 0;
-    this.capacity = this.initialCapacity;
-    this.buckets = new Array(initialCapacity).fill(null).map(() => []);
+    this.buckets = new Array(this.capacity).fill(null).map(() => []);
+  }
+
+  key() {
+    const allKeys = [];
+
+    for (const bucket of this.buckets) {
+      for (const pair of bucket) {
+        allKeys.push(pair[0]); // first element is the key
+      }
+    }
+
+    return allKeys;
   }
 }

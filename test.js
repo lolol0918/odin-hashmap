@@ -14,3 +14,27 @@ test.set("ice cream", "white");
 test.set("jacket", "blue");
 test.set("kite", "pink");
 test.set("lion", "golden");
+
+console.log(test.key());
+console.log("Before clear:");
+console.log("Length:", test.length()); // 12
+console.log("Has 'apple'? ", test.has("apple")); // true
+console.log("Has 'lion'? ", test.has("lion")); // true
+console.log("Has 'kite'? ", test.has("kite")); // true
+
+// Clear the hash map
+test.clear();
+
+console.log("\nAfter clear:");
+console.log("Length:", test.length()); // 0
+console.log("Has 'apple'? ", test.has("apple")); // false
+console.log("Has 'lion'? ", test.has("lion")); // false
+console.log("Has 'kite'? ", test.has("kite")); // false
+
+// Add something new after clearing
+test.set("monkey", "brown");
+console.log("\nAfter adding new key:");
+console.log("Length:", test.length()); // 1
+console.log("Get 'monkey':", test.get("monkey")); // "brown"
+
+console.log(test.key());
