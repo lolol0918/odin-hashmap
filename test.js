@@ -16,3 +16,6 @@ test.set("kite", "pink");
 test.set("lion", "golden");
 
 console.log(test.get("apple"));
+console.log(test.has("apple"));
+console.log(test.has("banana"));
+console.log(test.has("cat"));

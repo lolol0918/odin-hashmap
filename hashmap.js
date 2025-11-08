@@ -43,4 +43,17 @@ export class HashMap {
 
     return null;
   }
+
+  has(key) {
+    const index = this.hash(key);
+    const bucket = this.buckets[index];
+
+    for (let i = 0; i < bucket.length; i++) {
+      if (bucket[i][0] === key) {
+        return true;
+      }
+    }
+
+    return false;
+  }
 }
