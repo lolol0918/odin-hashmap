@@ -15,16 +15,17 @@ test.set("jacket", "blue");
 test.set("kite", "pink");
 test.set("lion", "golden");
 
-// remove an existing key
-console.log(test.remove("dog")); // expected: true
-console.log(test.get("dog")); // expected: undefined
+console.log("Before remove:");
+console.log("Has 'apple'? ", test.has("apple")); // true
+console.log("Has 'lion'? ", test.has("lion")); // true
 
-// remove another existing key
-console.log(test.remove("grape")); // expected: true
-console.log(test.get("grape")); // expected: undefined
+// Remove some keys
+console.log("\nRemoving 'apple':", test.remove("apple")); // true
+console.log("Removing 'lion':", test.remove("lion")); // true
+console.log("Removing 'monkey':", test.remove("monkey")); // false
 
-// remove a key that doesn't exist
-console.log(test.remove("pizza")); // expected: false
-
-// check size after removals
-console.log(test.size);
+console.log("\nAfter remove:");
+console.log("Has 'apple'? ", test.has("apple")); // false
+console.log("Has 'lion'? ", test.has("lion")); // false
+console.log("Has 'banana'? ", test.has("banana")); // true
+console.log("Get 'banana': ", test.get("banana")); // "yellow"
