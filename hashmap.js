@@ -29,8 +29,29 @@ export class HashMap {
 
     bucket.push([key, value]);
     this.size++;
+
+    if (this.size >= this.capacity * this.loadFactor) {
+      this.resize();
+    }
   }
 
+  resize() {
+    const oldBuckets = this.buckets;
+
+    this.capacity *= 2;
+
+    this.buckets = new Array(this.capacity).fill(null).map(() => []);
+
+    this.size = 0;
+
+    for (const bucket of oldBuckets) {
+      for (const [key, value] of bucket) {
+        const index = this.hash(key);
+        this.buckets[index].push([key, value]);
+        this.size++;
+      }
+    }
+  }
   get(key) {
     const index = this.hash(key);
     const bucket = this.buckets[index];
@@ -98,7 +119,7 @@ export class HashMap {
 
     for (const bucket of this.buckets) {
       for (const pair of bucket) {
-        allValues.push(pair[1]); // first element is the key
+        allValues.push(pair[1]);
       }
     }
 
